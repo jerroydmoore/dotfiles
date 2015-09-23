@@ -1,10 +1,6 @@
 [user]
 	name = Jerroyd Moore
 	email = jerroydmoore@gmail.com
-[merge]
-	tool = kdiff3
-[diff]
-	guitool = kdiff3
 [commit]
 	template = /Users/jnmoore/.gitmessage
 [core]
