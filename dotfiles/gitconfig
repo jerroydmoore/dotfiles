@@ -9,7 +9,7 @@
 	template = /Users/jnmoore/.gitmessage
 [core]
 	excludesfile = /Users/jnmoore/.gitignore_global
-	autocrlf = true
+	autocrlf = input
 	filemode = false
 [push]
 	default = simple
