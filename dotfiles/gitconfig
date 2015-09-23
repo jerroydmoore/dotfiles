@@ -2,9 +2,9 @@
 	name = Jerroyd Moore
 	email = jerroydmoore@gmail.com
 [commit]
-	template = /Users/jnmoore/.gitmessage
+	template = ~/.gitmessage
 [core]
-	excludesfile = /Users/jnmoore/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	filemode = false
 [push]
