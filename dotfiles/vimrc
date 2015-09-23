@@ -1,0 +1,59 @@
+set nocompatible
+
+" search options
+set ignorecase " make /search case insensitive
+set smartcase  " (unless they contain a capita)
+set incsearch  " search while typing
+set hlsearch   " highlight search results
+
+" tab settings
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+
+" indent settings
+set autoindent
+set smartindent
+
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
+set ruler
+set showmode
+"set visualbell
+set showcmd
+"set hidden    " enables better buffer support
+set showmatch " show matching parens
+"set wrap!
+
+" make command completion more like readline
+"set wildmenu
+"set wildmode=list:longest
+
+" Invisible Characters
+"set list
+"set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" Remove trailing whitespace on save
+autocmd BufWritePre ** :%s/\s\+$//e
+
+if has("mouse")
+  set mouse=a
+endif
+
+" show line numbers
+set scrolloff=3
+set sidescrolloff=8
+
+" syntax highlighting for erb files
+"autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
+
+au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+
+" Make backspace behave the way I expect
+set backspace=indent,eol,start
+

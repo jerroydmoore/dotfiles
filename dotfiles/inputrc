@@ -1,0 +1,17 @@
+#author: Jerroyd Moore <jerroydmoore@gmail.com>
+
+#Readline Ini File
+
+#Allow bash autocomplete tab to ignore case
+set completion-ignore-case on
+
+# Allow the command prompt to wrap to the next line
+set horizontal-scroll-mode Off
+
+# When autocomplete matches against more than one file or directory
+# this makes it unnecessary to press Tab _twice_
+set show-all-if-ambiguous on
+
+#Allow alt+arrows to move forwards and back words.
+"\e[1;9D": backward-word
+"\e[1;9C": forward-word

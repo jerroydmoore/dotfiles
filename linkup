@@ -1,0 +1,21 @@
+#!/bin/zsh
+#
+# Links the contents of the `dotfiles` directory into the home directory,
+# prefixing each with a `.`.
+# Author: Noah Silas
+# Source: github.com/noahsilas/dotfiles/
+
+RELATIVE_PATH=`dirname $0`
+DOTFILES_PATH=`( cd ${RELATIVE_PATH}/dotfiles && pwd )`
+
+for FILE in $DOTFILES_PATH/*; do
+    DEST=~/.`basename $FILE`
+
+    if [[ -L $DEST ]] && [[ `readlink $DEST` == $FILE ]]; then
+        # The link is already to the destination; we don't need to do
+        # anything.
+        continue
+    fi
+
+    ln -s $FILE $DEST
+done

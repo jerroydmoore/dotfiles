@@ -1,0 +1,50 @@
+#Setup Android Development Environment
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export ANT_HOME=~/Development/apache-ant-1.9.6
+export ANDROID_SDK_HOME=~/Development/android-sdk
+export PATH=${PATH}:${ANDROID_SDK_HOME}/platform-tools:${ANDROID_SDK_HOME}/tools:${ANT_HOME}/bin:${HOME}/bin
+
+#chef/kitchen shortcuts
+DEFAULT_VM_INSTANCE="default-ubuntu"
+#alias b="/opt/chefdk/embedded/bin/bundle exec"
+alias k="/opt/chefdk/bin/kitchen"
+alias kdd="k destroy"
+alias kcc="k converge"
+alias kvv="k verify"
+alias kll="k login"
+alias kd="kdd $DEFAULT_VM_INSTANCE"
+alias kc="kcc $DEFAULT_VM_INSTANCE"
+alias kv="kvv $DEFAULT_VM_INSTANCE"
+alias kl="kll $DEFAULT_VM_INSTANCE"
+
+alias cdvm="cd ~/Documents/repos/backend-infrastructure/cookbooks/android_cordova_builder"
+alias cdc="cd ~/Documents/repos/cordova-builder"
+#prettyful lists
+alias ls="/bin/ls -pG"
+alias g=git
+
+#bash autocomplete tab will ignore .DS_Store files
+export FIGNORE=DS_Store
+
+#add git branch to bash prompt
+if [ -z "$HAS_GIT_PROMPT" ]; then
+	HAS_GIT_PROMPT=0
+	if [ -f "~/.git-prompt.sh" ]; then
+		source ~/.git-prompt.sh
+		HAS_GIT_PROMPT=1
+	elif [ -f "/etc/git-prompt.sh" ]; then
+		source /etc/git-prompt.sh
+		HAS_GIT_PROMPT=1
+	fi
+fi
+
+if [ "$HAS_GIT_PROMPT" -eq "1" ]; then
+  PS1='\[\e[0;33m\]\t \W\[\e[m\]$(__git_ps1 " (\[\e[0;32m\]%s\[\e[m\])")\$  '
+fi
+
+if [ -f ~/.git-autocompletion.bash ]; then
+	source ~/.git-autocompletion.bash
+fi
+
+eval "$(chef shell-init bash)"
+
