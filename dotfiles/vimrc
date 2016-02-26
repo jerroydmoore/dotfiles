@@ -41,10 +41,6 @@ set showmatch " show matching parens
 " Remove trailing whitespace on save
 autocmd BufWritePre ** :%s/\s\+$//e
 
-if has("mouse")
-  set mouse=a
-endif
-
 " show line numbers
 set scrolloff=3
 set sidescrolloff=8
