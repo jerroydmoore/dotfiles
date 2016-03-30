@@ -52,5 +52,10 @@ if [ -f ~/.git-autocompletion.bash ]; then
 	source ~/.git-autocompletion.bash
 fi
 
+# don't show duplicate commands in history
+HISTCONTROL=ignoredups
+# don't store these commands in history
+HISTIGNORE='ls:exit:h:history:pwd'
+
 eval "$(/opt/chefdk/bin/chef shell-init bash)"
 
