@@ -8,9 +8,11 @@ export ANDROID_SDK_HOME=~/Development/android-sdk
 export PATH=${PATH}:${ANDROID_SDK_HOME}/platform-tools:${ANDROID_SDK_HOME}/tools:${ANT_HOME}/bin:${HOME}/bin
 
 #chef/kitchen shortcuts
+chefbin=/opt/chefdk/embedded/bin
+#chefbin=/opt/chefdk/bin
 DEFAULT_VM_INSTANCE="default-ubuntu"
-alias b="/opt/chefdk/embedded/bin/bundle"
-#alias k="/opt/chefdk/bin/kitchen"
+alias b="${chefbin}/bundle"
+#alias k="${chefbin}/kitchen"
 alias k="b exec kitchen"
 alias kdd="k destroy"
 alias kcc="k converge"
@@ -50,5 +52,5 @@ if [ -f ~/.git-autocompletion.bash ]; then
 	source ~/.git-autocompletion.bash
 fi
 
-eval "$(chef shell-init bash)"
+eval "$(/opt/chefdk/bin/chef shell-init bash)"
 
