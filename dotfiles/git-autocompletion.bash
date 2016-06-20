@@ -2739,6 +2739,8 @@ _gitk ()
 }
 
 __git_complete git __git_main
+# jnmoore: map alias g=git to git so autocomplete works
+__git_complete g _git
 __git_complete gitk __gitk_main
 
 # The following are necessary only for Cygwin, and only are needed
