@@ -5,8 +5,8 @@ alias sha256="shasum -a 256"
 
 #Setup Android Development Environment
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-export ANT_HOME=~/Development/apache-ant-1.9.6
-export ANDROID_SDK_HOME=~/Development/android-sdk
+export ANT_HOME=$HOME/Development/apache-ant-1.9.6
+export ANDROID_SDK_HOME=$HOME/Development/android-sdk
 export ANDROID_HOME=$ANDROID_SDK_HOME
 export PATH=${PATH}:${ANDROID_SDK_HOME}/platform-tools:${ANDROID_SDK_HOME}/tools:${ANT_HOME}/bin:${HOME}/bin
 
@@ -28,8 +28,8 @@ alias kcd="kcc $DEFAULT_VM_INSTANCE -l debug"
 alias kv="kvv $DEFAULT_VM_INSTANCE"
 alias kl="kll $DEFAULT_VM_INSTANCE"
 
-alias cdvm="cd ~/Documents/repos/backend-infrastructure/cookbooks/android_cordova_builder"
-alias cdc="cd ~/Documents/repos/cordova-builder"
+alias cdvm="cd $HOME/Documents/repos/backend-infrastructure/cookbooks/android_cordova_builder"
+alias cdc="cd $HOME/Documents/repos/cordova-builder"
 #prettyful lists
 alias ls="/bin/ls -pG"
 alias g=git
@@ -40,8 +40,8 @@ export FIGNORE=DS_Store
 #add git branch to bash prompt
 if [ -z "$HAS_GIT_PROMPT" ]; then
 	HAS_GIT_PROMPT=0
-	if [ -f "~/.git-prompt.sh" ]; then
-		source ~/.git-prompt.sh
+	if [ -f "$HOME/.git-prompt.sh" ]; then
+		source $HOME/.git-prompt.sh
 		HAS_GIT_PROMPT=1
 	elif [ -f "/etc/git-prompt.sh" ]; then
 		source /etc/git-prompt.sh
@@ -53,8 +53,8 @@ if [ "$HAS_GIT_PROMPT" -eq "1" ]; then
   PS1='\[\e[0;33m\]\t \W\[\e[m\]$(__git_ps1 " (\[\e[0;32m\]%s\[\e[m\])")\$  '
 fi
 
-if [ -f ~/.git-autocompletion.bash ]; then
-	source ~/.git-autocompletion.bash
+if [ -f $HOME/.git-autocompletion.bash ]; then
+	source $HOME/.git-autocompletion.bash
 fi
 
 # don't show duplicate commands in history
@@ -65,5 +65,5 @@ HISTIGNORE='ls:exit:h:history:pwd'
 eval "$(/opt/chefdk/bin/chef shell-init bash)"
 
 
-export NVM_DIR="~/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
