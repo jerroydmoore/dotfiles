@@ -1,3 +1,7 @@
+" Ignore indentations (and perhaps other stuff) when pasting
+" Make sure to turn off pasting mode afterwards
+set pastetoggle=<F3>
+
 set nocompatible
 
 " search options
