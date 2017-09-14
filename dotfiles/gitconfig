@@ -7,6 +7,7 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	filemode = false
+	editor = /usr/bin/vim
 [push]
 	default = simple
 [alias]
@@ -14,10 +15,11 @@
 	s = status
 	l = log
 	d = diff
-	ci = commit
+	ci = commit -s
 	co = checkout
 	br = branch
 	staged = diff --staged
+  st = diff --staged
 	amend = commit --amend
 	ammend = commit --amend
 	lg = log --graph --pretty=format:'%C(cyan)%h%Creset - %s %Cgreen(%cr) %C(blue)<%an>%C(yellow)%d%Creset' --abbrev-commit
@@ -27,6 +29,7 @@
 	fixup = !sh -c 'git commit --fixup=$1' -
 	squash = !sh -c 'git commit --squash=$1' -
 	ri = rebase --interactive --autosquash
+	praise = blame
 [include]
 	path = ~/.gitconfig.local
 [rebase]

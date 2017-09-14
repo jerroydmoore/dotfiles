@@ -1,3 +1,5 @@
+export EDITOR=vim
+
 #Misc
 alias sha256="shasum -a 256"
 
@@ -5,21 +7,24 @@ alias sha256="shasum -a 256"
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export ANT_HOME=~/Development/apache-ant-1.9.6
 export ANDROID_SDK_HOME=~/Development/android-sdk
+export ANDROID_HOME=$ANDROID_SDK_HOME
 export PATH=${PATH}:${ANDROID_SDK_HOME}/platform-tools:${ANDROID_SDK_HOME}/tools:${ANT_HOME}/bin:${HOME}/bin
 
 #chef/kitchen shortcuts
-chefbin=/opt/chefdk/embedded/bin
-#chefbin=/opt/chefdk/bin
+#chefbin=/opt/chefdk/embedded/bin
+chefbin=/opt/chefdk/bin
 DEFAULT_VM_INSTANCE="default-ubuntu"
 alias b="${chefbin}/bundle"
-#alias k="${chefbin}/kitchen"
-alias k="b exec kitchen"
+alias k="${chefbin}/kitchen"
+#alias k="b exec kitchen"
 alias kdd="k destroy"
 alias kcc="k converge"
+alias kccd="k converge -l debug"
 alias kvv="k verify"
 alias kll="k login"
 alias kd="kdd $DEFAULT_VM_INSTANCE"
 alias kc="kcc $DEFAULT_VM_INSTANCE"
+alias kcd="kcc $DEFAULT_VM_INSTANCE -l debug"
 alias kv="kvv $DEFAULT_VM_INSTANCE"
 alias kl="kll $DEFAULT_VM_INSTANCE"
 
@@ -53,9 +58,12 @@ if [ -f ~/.git-autocompletion.bash ]; then
 fi
 
 # don't show duplicate commands in history
-HISTCONTROL=ignoredups
+HISTCONTROL=ignoredups:erasedups
 # don't store these commands in history
 HISTIGNORE='ls:exit:h:history:pwd'
 
 eval "$(/opt/chefdk/bin/chef shell-init bash)"
 
+
+export NVM_DIR="~/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
