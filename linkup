@@ -19,3 +19,15 @@ for FILE in $DOTFILES_PATH/*; do
 
     ln -s $FILE $DEST
 done
+
+# For windows CMD, instruct how to map 'g' to 'git'
+# https://stackoverflow.com/questions/394230/how-to-detect-the-os-from-a-bash-script
+unamestr=`uname`
+if [[ $unamestr == MINGW64* ]]; then
+  echo " "
+  echo "WINDOWS SYSTEM DETECTED"
+  echo "  In order to map 'g' to 'git', Open 'regedit' go to "
+  echo "  HKEY_CURRENT_USER\\Software\\Microsoft\\Command Processor"
+  echo "  Add String Value entry with the name 'AutoRun' and the path:"
+  echo "  $USERPROFILE\\.win-alias.cmd"
+fi

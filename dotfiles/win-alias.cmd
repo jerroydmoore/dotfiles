@@ -1,0 +1,1 @@
+DOSKEY g=git
