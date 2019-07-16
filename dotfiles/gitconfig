@@ -15,7 +15,7 @@
 	s = status
 	l = log
 	d = diff
-	ci = commit -s
+	ci = commit
 	co = checkout
 	br = branch
 	staged = diff --staged
