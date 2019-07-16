@@ -24,43 +24,6 @@ alias sha256="shasum -a 256"
 # Add personal bin to your PATH
 export PATH=${PATH}:${HOME}/bin
 
-# Android Development
-if [ -x /usr/libexec/java_home ]
-then
-  export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
-fi
-
-ant_home=$HOME/Development/apache-ant-1.9.6
-if [ -d $ant_home ]
-then
-  export ANT_HOME=$HOME/Development/apache-ant-1.9.6
-  export PATH=${PATH}:${ANT_HOME}/bin
-fi
-android_home=$HOME/Development/android-sdk
-if [ -d $android_home ]
-then
-  export ANDROID_SDK_HOME=$android_home
-  export ANDROID_HOME=$android_home
-fi
-
-#chef/kitchen shortcuts
-#chefbin=/opt/chefdk/embedded/bin
-chefbin=/opt/chefdk/bin
-DEFAULT_VM_INSTANCE="default-ubuntu"
-alias b="${chefbin}/bundle"
-alias k="${chefbin}/kitchen"
-#alias k="b exec kitchen"
-alias kdd="k destroy"
-alias kcc="k converge"
-alias kccd="k converge -l debug"
-alias kvv="k verify"
-alias kll="k login"
-alias kd="kdd $DEFAULT_VM_INSTANCE"
-alias kc="kcc $DEFAULT_VM_INSTANCE"
-alias kcd="kcc $DEFAULT_VM_INSTANCE -l debug"
-alias kv="kvv $DEFAULT_VM_INSTANCE"
-alias kl="kll $DEFAULT_VM_INSTANCE"
-
 # prettyful lists
 alias ls="/bin/ls -pG"
 # shorter git typings
@@ -94,18 +57,10 @@ HISTCONTROL=ignoredups:erasedups
 # don't store these commands in history
 HISTIGNORE='ls:exit:h:history:pwd'
 
-if [ -x /opt/chefdk/bin/chef ]
-then
-  eval "$(/opt/chefdk/bin/chef shell-init bash)"
-fi
-
-# Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
 # For local configurations
 if [ -f $HOME/.bash.local ]
 then
   source $HOME/.bash.local
 fi
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
