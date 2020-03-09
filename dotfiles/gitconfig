@@ -17,6 +17,7 @@
 	d = diff
 	ci = commit
 	co = checkout
+	cp = cherry-pick
 	br = branch
 	staged = diff --staged
   st = diff --staged
