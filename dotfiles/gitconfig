@@ -31,6 +31,7 @@
 	squash = !sh -c 'git commit --squash=$1' -
 	ri = rebase --interactive --autosquash
 	praise = blame
+	pushf = push --force-with-lease
 [include]
 	path = ~/.gitconfig.local
 [rebase]
