@@ -9,7 +9,7 @@
 	filemode = false
 	editor = /usr/bin/vim
 [push]
-	default = simple
+	default = current
 [alias]
 	a = add
 	s = status
