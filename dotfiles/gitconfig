@@ -20,7 +20,7 @@
 	cp = cherry-pick
 	br = branch
 	staged = diff --staged
-  st = diff --staged
+	st = diff --staged
 	amend = commit --amend
 	ammend = commit --amend
 	lg = log --graph --pretty=format:'%C(cyan)%h%Creset - %s %Cgreen(%cr) %C(blue)<%an>%C(yellow)%d%Creset' --abbrev-commit
