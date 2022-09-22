@@ -21,7 +21,7 @@ export EDITOR=vim
 alias sha256="shasum -a 256"
 
 # Add personal bin to your PATH
-export PATH=${PATH}:${HOME}/bin
+export PATH=${HOME}/bin:${PATH}
 
 # prettyful lists
 alias ls="/bin/ls -pG"
