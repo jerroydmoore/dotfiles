@@ -13,7 +13,6 @@
 #######################################################################
 
 
-
 #
 # Set default editor
 export EDITOR=vim
@@ -29,10 +28,13 @@ alias ls="/bin/ls -pG"
 # shorter git typings
 alias g=git
 
-#bash autocomplete tab will ignore .DS_Store files
+# bash autocomplete tab will ignore .DS_Store files
 export FIGNORE=DS_Store
 
-#add git branch to bash prompt
+# Bash is Okay
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# add git branch to bash prompt
 if [ -z "$HAS_GIT_PROMPT" ]; then
 	HAS_GIT_PROMPT=0
 	if [ -f "$HOME/.git-prompt.sh" ]; then
