@@ -58,6 +58,9 @@ fi
 HISTCONTROL=ignoredups:erasedups
 # don't store these commands in history
 HISTIGNORE='ls:exit:h:history:pwd'
+# don't truncate history
+HISTSIZE=
+HISTFILESIZE=
 
 # For local configurations
 if [ -f $HOME/.bash.local ]

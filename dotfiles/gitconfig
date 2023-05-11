@@ -18,7 +18,7 @@
 	ci = commit
 	co = checkout
 	cp = cherry-pick
-	br = branch
+	br = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))'
 	staged = diff --staged
 	st = diff --staged
 	amend = commit --amend
@@ -36,3 +36,7 @@
 	path = ~/.gitconfig.local
 [rebase]
 	autosquash = true
+[credential]
+	helper = osxkeychain
+[color]
+	ui = true
