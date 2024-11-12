@@ -7,7 +7,17 @@
 
 RELATIVE_PATH=`dirname $0`
 DOTFILES_PATH=`( cd ${RELATIVE_PATH}/dotfiles && pwd )`
+GITCONFIG_PATH="dotfiles/gitconfig"
 
+
+# Check if the gitconfig file exists
+if [[ ! -f $GITCONFIG_PATH ]]; then
+    echo "The file $GITCONFIG_PATH does not exist."
+else
+    # Replace the string $HOME with the value of the environment variable $HOME
+    sed -i.bak "s|\$HOME|$HOME|g" $GITCONFIG_PATH
+    echo "Replaced \$HOME with $HOME in $GITCONFIG_PATH"
+fi
 for FILE in $DOTFILES_PATH/*; do
     DEST=~/.`basename $FILE`
 

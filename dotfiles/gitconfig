@@ -8,6 +8,7 @@
 	autocrlf = input
 	filemode = false
 	editor = /usr/bin/vim
+	attributesfile = $HOME/.gitattributes
 [push]
 	default = current
 [alias]
